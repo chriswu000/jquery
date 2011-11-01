@@ -247,6 +247,10 @@ jQuery.fn.extend({
 				self.html( value.call(this, i, self.html()) );
 			});
 
+		} else if ( jQuery.isFunction( value.toString ) ) {
+			var self = jQuery( this );
+			self.html( value.toString() );
+
 		} else {
 			this.empty().append( value );
 		}
